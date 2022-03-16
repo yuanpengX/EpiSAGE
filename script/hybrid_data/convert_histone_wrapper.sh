@@ -1,0 +1,1 @@
+cat ${datadir}/file_list.txt | awk '{print $2"\t"$5}' | xargs  -n 2 -P 5 nohup bash convert_histone.sh $1 >> ${datadir}/convert_histone_run.log  2>&1 &
